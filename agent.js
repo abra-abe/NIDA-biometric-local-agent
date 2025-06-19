@@ -145,6 +145,9 @@ const server = http.createServer(async (req, res) => {
                 // --- NEW: Call App 3 ---
                 try {
                     console.log(`[LocalAgent] Forwarding to App 3 (${APP3_SERVER_URL}) with NIN, FingerCode, and Fingerprint.`);
+                    res.writeHead(202, { 'Content-Type': 'application/json' });
+                    res.write(JSON.stringify({ message: "Processing via App 3..." }));
+                    // Send the data to App 3
                     const app3Response = await axios.post(APP3_SERVER_URL, {
                         nin,
                         fingerCode,
