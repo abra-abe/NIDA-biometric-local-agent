@@ -1,4 +1,3 @@
-// File: local-fingerprint-agent/agent.js (Advanced Version)
 const http = require('http');
 const path = require("path");
 const { spawn } = require("child_process");
@@ -143,7 +142,7 @@ async function processFingerprintJob(jobId, nin, fingerCode) {
         // Handle any error from Python or Axios and update job status
         console.error(`[LocalAgent] Error in job ${jobId}:`, error);
         const errorDetails = {
-            message: error.message,
+            message: error.response?.data.StatusCodeDescription,
             statusCode: error.response?.status,
             responseData: error.response?.data
         };

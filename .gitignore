@@ -1,3 +1,8 @@
 /fingerprints
 /node_modules
 /scheme_lending.sql
+/NIDAPayloadOutputLogFile.json
+/scripts/fingerprints
+/scripts/image_base64.txt
+/scripts/test.wsq
+/scripts/output.wsq
